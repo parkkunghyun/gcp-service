@@ -2,6 +2,6 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div>hello gcp next js</div>
+    <div className="text-4xl">hello gcp next js</div>
   );
 }
