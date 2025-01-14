@@ -2,7 +2,7 @@ import { assets, workData } from '@/assets/assets'
 import Image from 'next/image'
 import React from 'react'
 
-const Work = () => {
+const Work = ({isDarkMode}) => {
   return (
       <div id='work' className='w-full px-[12%] py-10 scroll-mt-18'>
           <h4 className='mb-2 text-lg text-center font-Ovo'>My portfolio</h4>
@@ -11,7 +11,7 @@ const Work = () => {
               I am a frontend developer from California usa with 10 year of experience in multiple companies
           </p>
 
-          <div className='grid grid-cols-auto my-10 gap-5'>
+          <div className='grid grid-cols-auto my-10 gap-5 dark:text-black'>
               {workData.map((project, index) => (
                   <div key={index}
                       className='aspect-square bg-no-repeat cursor-pointer group bg-cover bg-center rounded-lg relative '
@@ -19,7 +19,7 @@ const Work = () => {
                       <div className='flex items-center group-hover:bottom-7 bg-white w-10/12 rounded-md absolute bottom-5 py-3 px-5 justify-between duration-500 -translate-x-1/2 left-1/2'>
                         <div >
                             <h2 className='font-semibold '>{project.title}</h2>
-                            <p className='text-sm text-gray-700'>{project.description}</p>
+                            <p className=' text-sm text-gray-700'>{project.description}</p>
                         </div>
                         <div className='cursor-pointer border shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition rounded-full border-black w-9 aspect-square flex items-center justify-center'>
                             <Image src={assets.send_icon} alt='work url' className='w-5' />
@@ -29,10 +29,10 @@ const Work = () => {
               ))}
           </div>
 
-          <a href="" className='flex items-center gap-2 w-max justify-center text-gray-700 border-[0.5px]
+          <a href="" className='dark:border-white dark:text-white dark:hover:bg-darkHover flex items-center gap-2 w-max justify-center text-gray-700 border-[0.5px]
            border-gray-700 rounded-full py-3 px-10 mx-auto my-20 hover:bg-lightHover duration-500'>
               Show more
-              <Image src={assets.right_arrow_bold} alt='show more' className='w-4' />
+              <Image src={isDarkMode ? assets.right_arrow_bold_dark :  assets.right_arrow_bold} alt='show more' className='w-4' />
           </a>
     </div>
   )
