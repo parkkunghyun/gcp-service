@@ -5,10 +5,9 @@ import React from 'react'
 const About = () => {
     return (
     //   id는 문서내 고유한 식별자 역할, 다른곳에서 id를 참조해서 이동가능
-      <div id='about' className='w-full px-[12%] py-10 scroll-mt-18'>
-          <h4 className='mb-2 text-lg text-center font-Ovo'>Introduction</h4>
+        <div id='about' className='w-full px-[12%] py-10 scroll-mt-18'>
+            <h4 className='mb-2 text-lg text-center font-Ovo'>Introduction</h4>
             <h2 className='text-5xl text-center font-Ovo'>About me</h2>
-            
             <div className='flex flex-col items-center w-full gap-20 my-20 lg:flex-row'>
                 <div className='w-64 sm:w-80 rounded-3xl max-w-none'>
                     <Image src={assets.user_image} alt='user'
@@ -26,7 +25,6 @@ const About = () => {
                             <li
                                 className='border-[0.5px] border-gray-400 cursor-pointer hover:shadow-black rounded-xl p-6 hover:bg-lightHover hover:-translate-y-1 duration-500'
                                 key={index}>
-                                
                                 <Image src={icon} alt={title} className='mt-3 w-7' />
                                 <h3 className='my-4 font-semibold text-gray-700'>{title}</h3>
                                 <p className='text-sm text-gray-600'>{description}</p>
